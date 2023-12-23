@@ -1,0 +1,153 @@
+{
+  "main": {
+    "id": "75eea3424a9d4a20",
+    "type": "split",
+    "children": [
+      {
+        "id": "112e7f84d6f82810",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1b9a9be71e0b5095",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "manual.pdf"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "58f1207b1624b3a2",
+    "type": "split",
+    "children": [
+      {
+        "id": "a874b2c63ada03a5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8f935bdbf5c8c8f7",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "9b71f5ea5310f7cc",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "6b1539c482682ab0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "1b5d5e045747963d",
+    "type": "split",
+    "children": [
+      {
+        "id": "8d04dbf83f1bec4e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "60b00372b3c5fac2",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "manual.pdf",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "50bd6d14458c65a7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "manual.pdf",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "7f6ff016c487b170",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "4c95006243108d63",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "manual.pdf"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "1b9a9be71e0b5095",
+  "lastOpenFiles": [
+    "report.pdf",
+    "Report.md",
+    "manual.pdf"
+  ]
+}

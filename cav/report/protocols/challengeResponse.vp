@@ -1,0 +1,39 @@
+// we trying to model challenge and response protocol where one of the parties proves his idendity we could see 
+//  this in tls handshake the only difference the server proves himself to the client with his information 
+// (ip addr,host name ...) signed by a trusted authority
+attacker [active]
+
+principal server []
+
+principal alice []
+
+principal alice [
+generates nonce
+]
+
+alice -> server :nonce
+
+principal server [
+knows private s
+gs=G^s
+proof=SIGN(s,nonce)
+]
+
+server -> alice : [gs] , proof
+
+principal alice[
+_=SIGNVERIF(gs,nonce,proof)?
+generates key
+e=PKE_ENC(gs,key)
+]
+
+alice -> server : e
+
+principal server[
+dkey=PKE_DEC(s,e)
+]
+
+queries[
+authentication? server->alice:proof
+confidentiality? key
+]

@@ -1,0 +1,27 @@
+attacker [active]
+
+
+principal server []
+
+principal client []
+
+principal client [
+    knows private sharedKey       
+    knows private msg 
+    tag=MAC(sharedKey,msg)
+    e=ENC(sharedKey,CONCAT(msg,tag))
+]
+
+client -> server : e
+
+principal server [
+    knows private sharedKey
+    d=DEC(sharedKey,e)    
+    dmsg,dtag=SPLIT(d)
+   _=ASSERT(MAC(sharedKey,dmsg),dtag)?
+]
+
+
+queries[
+    confidentiality? msg
+]

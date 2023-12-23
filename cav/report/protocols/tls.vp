@@ -1,0 +1,58 @@
+attacker [active]
+
+principal client[]
+
+principal server[]
+
+principal client [
+   knows private clientHelloMessage
+   generates clientRandom   
+]
+
+client -> server : clientHelloMessage,clientRandom
+
+principal server [
+   knows public serverHelloMessage
+   generates serverRandom   
+]
+
+server -> client : serverRandom , serverHelloMessage
+
+principal server [
+  // long term keys 
+  knows private s 
+  gs=G^s 
+  // diffie hellman key 
+  generates ds 
+  gds=G^ds 
+  signature=SIGN(s,gds) 
+]
+// all guarded because of certificate 
+server -> client : [gs] , signature , gds 
+
+principal client [
+   _=SIGNVERIF(gs,gds,signature)?
+   // diffie hellman key
+   knows private c 
+   gc=G^c 
+  // diffie hellman key  
+   generates dc 
+   gdc=G^dc    
+   gdcs=gds^dc    
+   signature2=SIGN(c,gdc)  
+]
+
+client -> server : gdc,[gc],signature2
+
+principal server[
+   _=SIGNVERIF(gc,gdc,signature2)?
+   gdsc=gdc^ds    
+]
+
+
+queries[  
+  authentication? server->client:gds  
+  authentication? client->server:gdc
+  confidentiality? gdcs 
+  confidentiality? gdsc
+]

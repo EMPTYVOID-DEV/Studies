@@ -1,0 +1,32 @@
+attacker [active]
+
+principal alice[]
+principal bob[]
+
+principal alice[
+    knows private a 
+    ga=G^a      
+]
+
+alice -> bob: [ga]
+
+principal bob[
+  knows private b
+  gb=G^b 
+  gba=ga^b       
+]
+
+bob -> alice : gb 
+
+principal alice [
+    gab=gb^a  
+]
+
+queries[
+    // integrity check
+    equivalence? gab , gba 
+]
+
+
+// [ga] means the attacker can replace or manipulate ga you think of it as a certificate where bob pre-authenicated alice's public key
+// the same goes for gb.

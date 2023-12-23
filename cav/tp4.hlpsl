@@ -1,0 +1,59 @@
+%%% A -> B: {A.B.Na}_Kb
+%%% B -> A: {A.B.Na.s}_Ka
+
+role role_A(A:agent,B:agent,Ka:public_key,Kb:public_key,SND,RCV:channel(dy))
+played_by A
+def=
+    local
+        State:nat,Na:text,S:text
+    init
+        State := 0
+    transition
+        1. State=0 /\ RCV(start) =|> 
+                   State':=1 /\ Na':=new() /\ SND({A.B.Na'}_Kb)
+
+        2. State=1 /\ RCV({A.B.Na.S'}_Ka) =|> 
+                   State':=2   /\ request(A,B,auth_1,Na)
+end role
+
+role role_B(B:agent,A:agent,S:text,Ka:public_key,Kb:public_key,SND,RCV:channel(dy))
+played_by B
+def=
+    local
+        State:nat,Na:text
+    init
+        State := 0
+    transition
+        1. State=0 /\ RCV({A.B.Na'}_Kb) =|> 
+                   
+                   State':=1 /\ SND({A.B.Na'.S}_Ka)
+
+                   /\ secret(S,sec_1,{A,B})  /\ witness(B,A,auth_1,Na')
+end role
+
+role session(A:agent,B:agent,S:text,Ka:public_key,Kb:public_key)
+def=
+    local
+        SND2,RCV2,SND1,RCV1:channel(dy)
+    composition
+        role_B(B,A,S,Ka,Kb,SND2,RCV2) /\ role_A(A,B,Ka,Kb,SND1,RCV1)
+end role
+
+role environment()
+def=
+    const
+        ka,kb:public_key,
+        alice,bob:agent,
+        s1:text,
+        sec_1,auth_1:protocol_id
+    intruder_knowledge = {alice,bob,ka,kb}
+    composition
+        session(alice,bob,s1,ka,kb) /\ session(alice,bob,s1,ka,kb)
+end role
+
+goal
+    secrecy_of sec_1
+    authentication_on auth_1
+end goal
+
+environment()
