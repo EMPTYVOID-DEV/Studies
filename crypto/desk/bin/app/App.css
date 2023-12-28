@@ -1,0 +1,50 @@
+* {
+  -fx-white: #f7f7f7;
+  -fx-primary800: #2783f5;
+  -fx-primary400: #2784f58c;
+  -fx-black: #121212;
+}
+
+Button {
+  -fx-font-size: 16px;
+  -fx-background-color: -fx-primary800;
+  -fx-border: none;
+  -fx-text-fill: -fx-white;
+  -fx-background-radius: 28px;
+}
+
+Button:hover {
+  -fx-background-color: -fx-primary400;
+}
+
+#main {
+  -fx-background-image: url("../assets/grid.png");
+  -fx-background-size: cover;
+  -fx-background-position: center;
+}
+
+#homeBtn {
+  -fx-fill: -fx-primary800;
+  -fx-shape: "M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12S6.47 2 12 2m3.59 5L12 10.59L8.41 7L7 8.41L10.59 12L7 15.59L8.41 17L12 13.41L15.59 17L17 15.59L13.41 12L17 8.41z";
+}
+
+#label {
+  -fx-font-size: 22px;
+  -fx-font-weight: bold;
+  -fx-text-fill: -fx-white;
+}
+
+#text {
+  -fx-font-size: 18px;
+  -fx-fill: -fx-white;
+  -fx-line-height: 1.6;
+}
+
+TextField,
+TextArea {
+  -fx-font-size: 18px;
+  -fx-text-fill: -fx-black;
+  -fx-padding-left: 20px;
+  -fx-border: none;
+  -fx-border-radius: 8px;
+}

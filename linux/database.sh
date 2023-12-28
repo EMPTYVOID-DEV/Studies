@@ -275,8 +275,8 @@ delete() {
 	continue=$(yesOrNo "Do you really want to delete this entry (y/n) ? : ")
 	idx=$1
 	if [[ $continue == y ]]; then
-		sed "${idx}d" "$databasePath/database.csv" >temp && mv temp "$databasePath/database.csv"
 		echo "The entry in the line $idx with the value $(getEntry "$idx") deleted at $(date)." >>"$databasePath/database.log"
+		sed "${idx}d" "$databasePath/database.csv" >temp && mv temp "$databasePath/database.csv"
 	fi
 	rePrint
 	menu
