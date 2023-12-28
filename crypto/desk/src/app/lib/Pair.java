@@ -1,4 +1,4 @@
-package lib;
+package app.lib;
 
 public class Pair<t, u> {
     public t x;

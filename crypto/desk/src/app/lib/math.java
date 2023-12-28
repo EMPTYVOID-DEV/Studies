@@ -1,12 +1,6 @@
-package lib;
+package app.lib;
 
 public class math {
-
-    // public static void main(String[] args) throws Exception {
-    // Pair[] systems = { new Pair(1, 3), new Pair(2, 4), new Pair(3, 5) };
-    // int res = CRT(systems);
-    // System.out.println(res);
-    // }
 
     public static int elucdian(int a, int b) {
         int res = a % b;

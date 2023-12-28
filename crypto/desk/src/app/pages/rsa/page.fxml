@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" spacing="10.0" stylesheets="@../../App.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.pages.rsa.page">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="94.0" prefWidth="1280.0" spacing="350.0">
+         <children>
+            <Button id="homeBtn" mnemonicParsing="false" onAction="#goHome" prefHeight="44.0" prefWidth="46.0" />
+            <Text fill="#fffefe" strokeType="OUTSIDE" strokeWidth="0.0" text="RSA Primitive" textAlignment="CENTER" wrappingWidth="419.130859375">
+               <font>
+                  <Font name="Ubuntu Bold" size="32.0" />
+               </font></Text>
+         </children>
+         <padding>
+            <Insets left="40.0" />
+         </padding>
+      </HBox>
+      <VBox prefHeight="94.0" prefWidth="1280.0" spacing="10.0">
+         <children>
+            <Label id="label" prefHeight="26.0" prefWidth="180.0" text="Decription" />
+            <Text id="text" lineSpacing="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RSA (Rivest–Shamir–Adleman) is a widely used public-key cryptosystem. It involves a pair of keys: a public key for encryption and a private key for decryption. The security of RSA relies on the difficulty of factoring the product of two large prime numbers." wrappingWidth="1225.1962890625" />
+         </children>
+         <padding>
+            <Insets left="40.0" />
+         </padding>
+      </VBox>
+      <VBox fillWidth="false" layoutX="10.0" layoutY="114.0" prefHeight="134.0" prefWidth="1280.0" spacing="10.0">
+         <children>
+            <Label id="label" prefHeight="26.0" prefWidth="180.0" text="Key" />
+            <TextField fx:id="key" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="780.0" promptText="Enter a key">
+               <font>
+                  <Font name="Ubuntu" size="18.0" />
+               </font>
+            </TextField>
+         </children>
+         <padding>
+            <Insets left="40.0" />
+         </padding>
+      </VBox>
+      <VBox fillWidth="false" layoutX="10.0" layoutY="218.0" prefHeight="134.0" prefWidth="1280.0" spacing="10.0">
+         <children>
+            <Label id="label" prefHeight="26.0" prefWidth="180.0" text="Input" />
+            <TextField fx:id="input" minHeight="-Infinity" minWidth="-Infinity" prefHeight="84.0" prefWidth="780.0" promptText="Enter a Input">
+               <font>
+                  <Font name="Ubuntu" size="18.0" />
+               </font>
+            </TextField>
+         </children>
+         <padding>
+            <Insets left="40.0" />
+         </padding>
+      </VBox>
+      <VBox fillWidth="false" layoutX="10.0" layoutY="362.0" prefHeight="134.0" prefWidth="1280.0" spacing="10.0">
+         <children>
+            <Label id="label" prefHeight="26.0" prefWidth="180.0" text="Output" />
+            <TextArea fx:id="output" prefHeight="84.0" prefWidth="776.0" promptText="The output">
+               <font>
+                  <Font name="Ubuntu" size="18.0" />
+               </font>
+            </TextArea>
+         </children>
+         <padding>
+            <Insets left="40.0" />
+         </padding>
+      </VBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Button fx:id="decrypt" mnemonicParsing="false" onAction="#decrypt" prefHeight="50.0" prefWidth="204.0" text="Decrypt" />
+            <Button fx:id="encrypt" layoutX="548.0" layoutY="35.0" mnemonicParsing="false" onAction="#encrypt" prefHeight="50.0" prefWidth="204.0" text="Encrypt" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

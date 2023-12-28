@@ -1,9 +1,11 @@
-package lib;
+package app.lib;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
+
 import java.security.SecureRandom;
 
 public class symmetric {
@@ -14,6 +16,11 @@ public class symmetric {
         random.nextBytes(iv);
         IvParameterSpec ivParameterSpec = new IvParameterSpec(iv);
         return ivParameterSpec;
+    }
+
+    public static SecretKey keyGenStr(String keyStr) {
+        byte[] decodedKey = keyStr.getBytes();
+        return new SecretKeySpec(decodedKey, 0, decodedKey.length, "AES");
     }
 
     public static SecretKey keyGen(int size) throws Exception {

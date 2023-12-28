@@ -1,10 +1,14 @@
-package lib;
+package app.lib;
 
 import java.util.Base64;
 
 public class utils {
     public static String encode(byte[] data) {
         return Base64.getEncoder().encodeToString(data);
+    }
+
+    public static byte[] decode(String data) {
+        return Base64.getDecoder().decode(data);
     }
 
     public static void print(String text) {
@@ -19,4 +23,5 @@ public class utils {
         }
         return difference;
     }
+
 }

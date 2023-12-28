@@ -1,4 +1,4 @@
-package lib;
+package app.lib;
 
 import java.security.InvalidKeyException;
 import java.security.KeyPair;
@@ -13,15 +13,6 @@ import java.util.Arrays;
 import javax.crypto.Cipher;
 
 public class signature {
-
-    public static void main(String[] args) throws Exception {
-        String msg = fileReader.readFile("/home/empty/Documents/studies/crypto/legacy/hash.txt");
-        Pair<PrivateKey, PublicKey> keys = KeyGen(2048);
-        byte[] sign = sign(keys.x, msg.getBytes());
-        byte[] builtSign = builtInSing(keys.x, msg.getBytes());
-        utils.print("sign " + utils.encode(sign) + "\n");
-        utils.print("built in sign " + utils.encode(builtSign) + "\n" + builtInVerify(keys.y, builtSign));
-    }
 
     public static Pair<PrivateKey, PublicKey> KeyGen(int size) throws Exception {
         KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
