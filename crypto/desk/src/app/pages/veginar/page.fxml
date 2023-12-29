@@ -15,7 +15,7 @@
       <HBox alignment="CENTER_LEFT" prefHeight="94.0" prefWidth="1280.0" spacing="350.0">
          <children>
             <Button id="homeBtn" mnemonicParsing="false" onAction="#goHome" prefHeight="44.0" prefWidth="46.0" />
-            <Text fill="#fffefe" strokeType="OUTSIDE" strokeWidth="0.0" text="CAESAR Primitive" textAlignment="CENTER" wrappingWidth="419.130859375">
+            <Text fill="#fffefe" strokeType="OUTSIDE" strokeWidth="0.0" text="Vigenère Primitive" textAlignment="CENTER" wrappingWidth="419.130859375">
                <font>
                   <Font name="Ubuntu Bold" size="32.0" />
                </font></Text>
@@ -27,7 +27,7 @@
       <VBox prefHeight="94.0" prefWidth="1280.0" spacing="10.0">
          <children>
             <Label id="label" prefHeight="26.0" prefWidth="180.0" text="Decription" />
-            <Text id="text" lineSpacing="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Caesar cipher is a simple and classic encryption technique that involves shifting the letters of the alphabet by a fixed number of positions. Named after Julius Caesar, who is historically known to have used this method, the cipher is a type of monoalphabetic substitution cipher." wrappingWidth="1225.1962890625" />
+            <Text id="text" lineSpacing="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Vigenère cipher is a method of encrypting alphabetic text by using a simple form of polyalphabetic substitution. Instead of using a single shift value like the Caesar cipher, the Vigenère cipher uses a keyword to determine multiple shift values throughout the message. The keyword is repeated to match the length of the message, and each letter is then shifted according to its corresponding letter in the keyword." wrappingWidth="1225.1962890625" />
          </children>
          <padding>
             <Insets left="40.0" />
