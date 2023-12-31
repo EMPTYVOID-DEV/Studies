@@ -1,3 +1,5 @@
+#!/bin/bash
+
 trap "echo -e '\n';exit" SIGINT
 
 PS3="Please select an option : "
