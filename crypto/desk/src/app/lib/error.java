@@ -36,7 +36,9 @@ public class error {
         errorsMap.put(6, "The input needs to contain only alphabet letters with this method");
         errorsMap.put(7, "The second affine key need to be reversible");
         errorsMap.put(8,
-                "Invalid rsa key.You should probably generate the rsa keys using either the key generate route , openssl or openssh.");
+                "Invalid rsa public key.You should probably generate the rsa keys using either the key generate route , openssl or openssh.");
+        errorsMap.put(9,
+                "Invalid rsa private key.You should probably generate the rsa keys using either the key generate route , openssl or openssh.");
         return errorsMap;
     }
 

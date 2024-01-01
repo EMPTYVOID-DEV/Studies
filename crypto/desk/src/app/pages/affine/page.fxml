@@ -27,7 +27,7 @@
       <VBox prefHeight="94.0" prefWidth="1280.0" spacing="10.0">
          <children>
             <Label id="label" prefHeight="26.0" prefWidth="180.0" text="Decription" />
-            <Text id="text" lineSpacing="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Affine cipher is an encryption technique that involves substitution of letters in the alphabet. It utilizes a mathematical function of the form E(x)=(ax+b)mod  n for encryption, where a and b are key components." wrappingWidth="1225.1962890625" />
+            <Text id="text" lineSpacing="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Affine cipher is an encryption technique that involves substitution of letters in the alphabet. It utilizes a mathematical function of the form E(x)=(ax+b)mod 26 for encryption, where a and b are key components." wrappingWidth="1225.1962890625" />
          </children>
          <padding>
             <Insets left="40.0" />
