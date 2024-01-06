@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" spacing="10.0" stylesheets="@../../App.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.pages.aes.page">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="94.0" prefWidth="1280.0" spacing="350.0">
+         <children>
+            <Button id="homeBtn" mnemonicParsing="false" onAction="#goHome" prefHeight="44.0" prefWidth="46.0" />
+            <Text fill="#fffefe" strokeType="OUTSIDE" strokeWidth="0.0" text="Advanced encryption standard Primitive" textAlignment="CENTER" wrappingWidth="419.130859375">
+               <font>
+                  <Font name="Ubuntu Bold" size="32.0" />
+               </font></Text>
+         </children>
+         <padding>
+            <Insets left="40.0" />
+         </padding>
+      </HBox>
+      <VBox prefHeight="94.0" prefWidth="1280.0" spacing="10.0">
+         <children>
+            <Label id="label" prefHeight="26.0" prefWidth="180.0" text="Decription" />
+            <Text id="text" lineSpacing="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AES (Advanced Encryption Standard) is a widely used symmetric encryption algorithm. It operates on fixed-size blocks of data (128 bits) with key lengths of 128, 192, or 256 bits. Various modes like ECB, CBC, CFB, OFB, and CTR dictate how multiple blocks are processed" wrappingWidth="1225.1962890625" />
+         </children>
+         <padding>
+            <Insets left="40.0" />
+         </padding>
+      </VBox>
+       <VBox fillWidth="false" layoutX="38.0" layoutY="114.0" prefHeight="107.0" prefWidth="1240.0" spacing="10.0">
+        <Label id="label" prefHeight="26.0" prefWidth="358.0" text="Method (DEFAULT ECB)" textFill="#121212">
+            <font>
+               <Font name="Georgia Bold" size="16.0" />
+            </font>
+            <VBox.margin>
+               <Insets />
+            </VBox.margin></Label>
+        <ComboBox fx:id="mode" prefHeight="60.0" prefWidth="393.0" promptText="Select a mode">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="ECB" />
+                    <String fx:value="CBC" />                 
+                </FXCollections>
+            </items>
+        </ComboBox>
+         <VBox.margin>
+            <Insets left="40.0" />
+         </VBox.margin>
+    </VBox>
+      <VBox fillWidth="false" layoutX="10.0" layoutY="114.0" prefHeight="134.0" prefWidth="1280.0" spacing="10.0">
+         <children>
+            <Label id="label" prefHeight="26.0" prefWidth="180.0" text="Key" />
+            <TextField fx:id="key" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="780.0" promptText="Enter a key">
+               <font>
+                  <Font name="Ubuntu" size="18.0" />
+               </font>
+            </TextField>
+         </children>
+         <padding>
+            <Insets left="40.0" />
+         </padding>
+      </VBox>
+      <VBox fillWidth="false" layoutX="10.0" layoutY="218.0" prefHeight="134.0" prefWidth="1280.0" spacing="10.0">
+         <children>
+            <Label id="label" prefHeight="26.0" prefWidth="180.0" text="Input" />
+            <TextField fx:id="input" minHeight="-Infinity" minWidth="-Infinity" prefHeight="74.0" prefWidth="780.0" promptText="Enter a Input">
+               <font>
+                  <Font name="Ubuntu" size="18.0" />
+               </font>
+            </TextField>
+         </children>
+         <padding>
+            <Insets left="40.0" />
+         </padding>
+      </VBox>
+      <VBox fillWidth="false" layoutX="10.0" layoutY="362.0" prefHeight="134.0" prefWidth="1280.0" spacing="10.0">
+         <children>
+            <Label id="label" prefHeight="26.0" prefWidth="180.0" text="Output" />
+            <TextArea fx:id="output" prefHeight="74.0" prefWidth="776.0" promptText="The output">
+               <font>
+                  <Font name="Ubuntu" size="18.0" />
+               </font>
+            </TextArea>
+         </children>
+         <padding>
+            <Insets left="40.0" />
+         </padding>
+      </VBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Button fx:id="decrypt" mnemonicParsing="false" onAction="#decrypt" prefHeight="50.0" prefWidth="204.0" text="Decrypt" />
+            <Button fx:id="encrypt" layoutX="548.0" layoutY="35.0" mnemonicParsing="false" onAction="#encrypt" prefHeight="50.0" prefWidth="204.0" text="Encrypt" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
