@@ -3,7 +3,6 @@
 trap "echo -e '\n';exit" SIGINT
 
 PS3="Please select an option : "
-timeOutDuration=15
 databasePath="$HOME/database"
 red_color="\e[38;2;255;0;0m"
 green_color="\e[38;2;0;255;0m"
@@ -52,11 +51,11 @@ menu() {
 				Search
 				;;
 			3)
-				exit
+				exit 0
 				;;
 			*)
 				echo -e "${red_color}Selecting non valid option exiting... $nc"
-				exit
+				exit 1
 				;;
 			esac
 		else
@@ -65,11 +64,11 @@ menu() {
 				addEntry
 				;;
 			2)
-				exit
+				exit 0
 				;;
 			*)
 				echo -e "${red_color}Selecting non valid option exiting... $nc"
-				exit
+				exit 1
 				;;
 			esac
 		fi
@@ -162,7 +161,7 @@ Search() {
 			;;
 		*)
 			echo -e "${red_color}Selecting non valid option exiting... $nc"
-			exit
+			exit 1
 			;;
 		esac
 	done
@@ -263,7 +262,7 @@ edit() {
 				;;
 			*)
 				echo -e "${red_color}Selecting non valid option exiting... $nc"
-				exit
+				exit 1
 				;;
 			esac
 		done
