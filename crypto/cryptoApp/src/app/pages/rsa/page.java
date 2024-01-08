@@ -60,7 +60,7 @@ public class page {
         try {
             key = asymmetric.decodePrivate(rawKey);
         } catch (Exception e) {
-            error.alert(8);
+            error.alert(9);
             return;
         }
         if (rawInput.isEmpty()) {

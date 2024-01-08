@@ -70,11 +70,15 @@ public class page {
             error.alert(1);
             return;
         }
-        boolean valid = app.lib.signature.builtInVerify(key, utils.decode(rawInput));
-        if (valid)
-            signature.setText("valid signature");
-        else
+        try {
+            boolean valid = app.lib.signature.builtInVerify(key, utils.decode(rawInput));
+            if (valid)
+                signature.setText("valid signature");
+            else
+                signature.setText("unvalid signature");
+        } catch (Exception e) {
             signature.setText("unvalid signature");
+        }
     }
 
 }
