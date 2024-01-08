@@ -3,7 +3,7 @@
 trap "echo -e '\n';exit" SIGINT
 
 PS3="Please select an option : "
-timeOutDuration=5
+timeOutDuration=15
 databasePath="$HOME/database"
 red_color="\e[38;2;255;0;0m"
 green_color="\e[38;2;0;255;0m"
@@ -99,7 +99,7 @@ addEntry() {
 Search() {
 	rePrint
 	echo -e "${green_color}Search for an entry using a query. $nc"
-	echo -e "${green_color}Example of query :name=aymen keskas&mobile=213645120299&telephone=666&place=setif&message=hello $nc"
+	echo -e "${green_color}Example of query :name=aymen keskas&mobile=0645120299&telephone=666&place=setif&message=hello $nc"
 	echo -e "${yellow_color}Warning: query accept only & operator. $nc"
 	info
 	validQuery=0
@@ -191,10 +191,7 @@ getEntryIndex() {
 			;;
 		mobile)
 			mobile="${queryParts[$key]}"
-			countryNumber="${mobile:0:3}"
-			actualNumber="${mobile:3:11}"
-			mobileParsed="+$countryNumber-$actualNumber"
-			awkScript+="\$4==\"$mobileParsed\" && "
+			awkScript+="\$4==\"+213-$mobile\" && "
 			;;
 		place)
 			sentencePlace=$(toSentenceCase "${queryParts[$key]}")
@@ -294,7 +291,7 @@ validateQuery() {
 			fi
 			;;
 		mobile)
-			if [[ ! "${queryParts[$key]}" =~ ^[0-9]{12}$ ]]; then
+			if [[ ! "${queryParts[$key]}" =~ ^[0-9]{10}$ ]]; then
 				return 0
 			fi
 			;;
@@ -347,10 +344,8 @@ readTel() {
 }
 
 readMobile() {
-	mobile=$(globalRead "Enter a mobile number : " "^[0-9]{12}$")
-	countryNumber="${mobile:0:3}"
-	actualNumber="${mobile:3:11}"
-	echo "+$countryNumber-$actualNumber"
+	mobile=$(globalRead "Enter a mobile number : " "^[0-9]{10}$")
+	echo "+213-$mobile"
 }
 
 readPlace() {
@@ -360,7 +355,7 @@ readPlace() {
 }
 
 readMessage() {
-	msg=$(globalRead "Enter a message : " "^.+$")
+	msg=$(globalRead "Enter a message : " "^[^,]+$")
 	echo "$msg"
 }
 
@@ -375,12 +370,12 @@ info() {
 	echo " name               Must respect (Alphabets and spaces only, sentence case will be applied)"
 	echo " email              Must respect (Symbols like '.', '_', alphabets, and numbers only, '@' and '.' required)"
 	echo " telephone          Must respect (Numbers only)"
-	echo " mobile             Must respect (12 digits, numbers only,with country number)"
+	echo " mobile             Must respect (10 digits,numbers only,we will include algeria code number)"
 	echo " place              Must respect (Alphabets and spaces only, sentence case will be applied)"
-	echo " message            Must respect (Any character allowed)"
+	echo " message            Must respect (Any character allowed except for , because its csv delimiter)"
 	echo
 	echo -e "${green_color}Example: $nc"
-	echo " John Doe,john.doe@example.com,1234567890,+911234567890,new york,'Hello, World!'"
+	echo " John Doe,john.doe@example.com,1234567890,0667091123,new york,Hello-World!"
 	echo
 }
 
@@ -394,8 +389,7 @@ globalRead() {
 
 rePrint() {
 	clear
-	#echo -e "$yellow_color warning:There is a $timeOutDuration seconds timeout. $nc"
-	echo -e "$green_color **********************  Database management script ********************** $nc"
+	echo -e "${green_color}**********************  Database management script ********************** $nc"
 }
 
 isEmpty() {
@@ -403,7 +397,7 @@ isEmpty() {
 	if [[ -n $content ]]; then
 		echo "1"
 	else
-		echo "" "0"
+		echo "0"
 	fi
 }
 

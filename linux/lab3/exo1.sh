@@ -1,14 +1,3 @@
-### create dirctories of a path recurisively
+trap 'echo -e "\n";exit' SIGINT
 
-if [[ $# -nq 1 ]]; then
-	echo "wrong input"
-	exit 1
-fi
-
-if [[ -d "$1" ]]
-then
-	exit 0
-else
-	"$0" $(dirname "$1")
-	mkdir "$1"
-fi
+IFS="," read -l <<<"$i"
