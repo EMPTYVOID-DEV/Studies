@@ -85,11 +85,11 @@ addEntry() {
 	mobile=$(readMobile)
 	place=$(readPlace)
 	msg=$(readMessage)
-	continue=$(yesOrNo "Do you really need to add that component (y/n) ? : ")
+	continue=$(yesOrNo "Do you really want to add this new entry (y/n) ? : ")
 	if [[ $continue == y ]]; then
 		newVal="$name,$email,$tel,$mobile,$place,$msg"
 		echo "$newVal" >>"$databasePath/database.csv"
-		echo "New entry added at $(date) with the value $newVal." >>"$databasePath/database.log"
+		echo "New entry got added at $(date) with the value '$newVal'." >>"$databasePath/database.log"
 	fi
 	rePrint
 	menu
@@ -116,7 +116,7 @@ Search() {
 		validateQuery conditionsMap
 		validQuery="$?"
 	done
-	echo "Search query for ${conditionsMap[@]} at $(date)" >>"$databasePath/database.log"
+	echo "Search query for '${conditionsMap[@]}' at $(date)" >>"$databasePath/database.log"
 	idx=$(getEntryIndex conditionsMap)
 	if [[ -z $idx ]]; then
 		rePrint
@@ -251,8 +251,8 @@ edit() {
 				;;
 			7)
 				newVal="$name,$email,$telephone,$mobile,$place,$message"
+				echo "Updating line number $7 with the value '$(getEntry "$idx")' at $(date) with this new value '$newVal.'" >>"$databasePath/database.log"
 				awk -i inplace -v new="$newVal" -v i="$7" 'NR==i {print new ; next } 1' "$databasePath/database.csv"
-				echo "Updating line number $7 at $(date) with this value $newVal." >>"$databasePath/database.log"
 				rePrint
 				menu
 				;;
@@ -273,7 +273,7 @@ delete() {
 	continue=$(yesOrNo "Do you really want to delete this entry (y/n) ? : ")
 	idx=$1
 	if [[ $continue == y ]]; then
-		echo "The entry in the line $idx with the value $(getEntry "$idx") deleted at $(date)." >>"$databasePath/database.log"
+		echo "The entry in the line $idx with the value '$(getEntry "$idx")' got deleted at $(date)." >>"$databasePath/database.log"
 		sed "${idx}d" "$databasePath/database.csv" >temp && mv temp "$databasePath/database.csv"
 	fi
 	rePrint
