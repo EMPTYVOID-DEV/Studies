@@ -10,19 +10,19 @@ circuit.h(1)
 
 circuit.cx(1, 2)
 
+circuit.measure([0, 1], [0, 1])
+
 circuit.cx(0, 1)
 
-circuit.h(0)
-
 circuit.measure([0, 1], [0, 1])
+
+circuit.h(0)
 
 circuit.cx(1, 2)
 
 circuit.cz(0, 2)
 
-circuit.measure(2, 2)
-
-# circuit.draw(output="mpl", filename="./result.png", style="iqp")
+circuit.z(2).c_if(2)
 
 sm = Aer.get_backend("qasm_simulator")
 

@@ -1,0 +1,128 @@
+WhatWeb report for https://www.umc.edu.dz/index.php/fr/
+Status    : 200 OK
+Title     : Université Frères Mentouri - Constantine 1 - Université Frère Mentouri - Constantine 1
+IP        : 41.111.178.100
+Country   : ALGERIA, DZ
+
+Summary   : Apache[2.4.29], Bootstrap, Cookies[c24a2c7ccc45cd6a7e582e56feac39c1], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.29 (Ubuntu)], HttpOnly[c24a2c7ccc45cd6a7e582e56feac39c1], maybe Joomla, JQuery, Script[application/json,text/javascript], UncommonHeaders[x-content-type-options,x-logged-in,x-content-powered-by], X-Frame-Options[sameorigin], X-UA-Compatible[IE=edge], X-XSS-Protection[1; mode=block]
+
+Detected Plugins:
+[ Apache ]
+	The Apache HTTP Server Project is an effort to develop and 
+	maintain an open-source HTTP server for modern operating 
+	systems including UNIX and Windows NT. The goal of this 
+	project is to provide a secure, efficient and extensible 
+	server that provides HTTP services in sync with the current 
+	HTTP standards. 
+
+	Version      : 2.4.29 (from HTTP Server Header)
+	Google Dorks: (3)
+	Website     : http://httpd.apache.org/
+
+[ Bootstrap ]
+	Bootstrap is an open source toolkit for developing with 
+	HTML, CSS, and JS. 
+
+	Website     : https://getbootstrap.com/
+
+[ Cookies ]
+	Display the names of cookies in the HTTP headers. The 
+	values are not returned to save on space. 
+
+	String       : c24a2c7ccc45cd6a7e582e56feac39c1
+
+[ HTML5 ]
+	HTML version 5, detected by the doctype declaration 
+
+
+[ HTTPServer ]
+	HTTP server header string. This plugin also attempts to 
+	identify the operating system from the server header. 
+
+	OS           : Ubuntu Linux
+	String       : Apache/2.4.29 (Ubuntu) (from server string)
+
+[ HttpOnly ]
+	If the HttpOnly flag is included in the HTTP set-cookie 
+	response header and the browser supports it then the cookie 
+	cannot be accessed through client side script - More Info: 
+	http://en.wikipedia.org/wiki/HTTP_cookie 
+
+	String       : c24a2c7ccc45cd6a7e582e56feac39c1
+
+[ JQuery ]
+	A fast, concise, JavaScript that simplifies how to traverse 
+	HTML documents, handle events, perform animations, and add 
+	AJAX. 
+
+	Website     : http://jquery.com/
+
+[ Joomla ]
+	Opensource CMS written in PHP. Aggressive version detection 
+	compares just 5 files, checks for version 1.0.0 up to 3.6.4 
+
+	Certainty    : maybe
+	Aggressive function available (check plugin file or details).
+	Google Dorks: (1)
+	Website     : http://joomla.org
+
+[ Script ]
+	This plugin detects instances of script HTML elements and 
+	returns the script language/type. 
+
+	String       : application/json,text/javascript
+
+[ UncommonHeaders ]
+	Uncommon HTTP server headers. The blacklist includes all 
+	the standard headers and many non standard but common ones. 
+	Interesting but fairly common headers should have their own 
+	plugins, eg. x-powered-by, server and x-aspnet-version. 
+	Info about headers can be found at www.http-stats.com 
+
+	String       : x-content-type-options,x-logged-in,x-content-powered-by (from headers)
+
+[ X-Frame-Options ]
+	This plugin retrieves the X-Frame-Options value from the 
+	HTTP header. - More Info: 
+	http://msdn.microsoft.com/en-us/library/cc288472%28VS.85%29.
+	aspx
+
+	String       : sameorigin
+
+[ X-UA-Compatible ]
+	This plugin retrieves the X-UA-Compatible value from the 
+	HTTP header and meta http-equiv tag. - More Info: 
+	http://msdn.microsoft.com/en-us/library/cc817574.aspx 
+
+	String       : IE=edge
+
+[ X-XSS-Protection ]
+	This plugin retrieves the X-XSS-Protection value from the 
+	HTTP header. - More Info: 
+	http://msdn.microsoft.com/en-us/library/cc288472%28VS.85%29.
+	aspx
+
+	String       : 1; mode=block
+
+HTTP Headers:
+	HTTP/1.1 200 OK
+	Date: Tue, 27 Feb 2024 18:32:26 GMT
+	Server: Apache/2.4.29 (Ubuntu)
+	X-Content-Type-Options: nosniff
+	Set-Cookie: c24a2c7ccc45cd6a7e582e56feac39c1=2enhlk78tnc2otpec61igrg734; path=/; secure; HttpOnly
+	X-Logged-In: False
+	X-Content-Powered-By: K2 v2.10.3 (by JoomlaWorks)
+	P3P: CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+	Expires: Wed, 17 Aug 2005 00:00:00 GMT
+	Last-Modified: Tue, 27 Feb 2024 18:32:31 GMT
+	Cache-Control: no-cache, no-store, must-revalidate, private
+	Pragma: no-cache
+	Vary: Accept-Encoding
+	Content-Encoding: gzip
+	X-Content-Type-Options: nosniff
+	X-Frame-Options: sameorigin
+	X-XSS-Protection: 1; mode=block
+	Content-Length: 17011
+	Connection: close
+	Content-Type: text/html; charset=utf-8
+	
