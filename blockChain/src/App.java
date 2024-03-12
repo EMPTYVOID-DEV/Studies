@@ -13,7 +13,7 @@ public class App {
         blockChain bitcoin = new blockChain(lol);
         bitcoin.add(lol);
         bitcoin.add(lol);
-        bitcoin.print();
+
     }
 
     public static void print(String msg) {
