@@ -1,0 +1,9 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding-top: 50px;
+}
+
+input[type="file"] {
+  margin-bottom: 10px;
+}
