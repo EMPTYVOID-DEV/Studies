@@ -1,0 +1,40 @@
+{
+  "name": "base",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "prettier --plugin-search-dir . --check . && eslint .",
+    "format": "prettier --plugin-search-dir . --write ."
+  },
+  "dependencies": {
+    "reveal.js": "^5.1.0"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "*",
+    "@sveltejs/kit": "*",
+    "@sveltejs/vite-plugin-svelte": "*",
+    "@types/eslint": "*",
+    "@types/reveal.js": "^5.0.3",
+    "@typescript-eslint/eslint-plugin": "*",
+    "@typescript-eslint/parser": "*",
+    "autoprefixer": "*",
+    "eslint": "*",
+    "eslint-config-prettier": "*",
+    "eslint-plugin-svelte": "*",
+    "postcss": "*",
+    "prettier": "*",
+    "prettier-plugin-tailwindcss": "*",
+    "svelte": "*",
+    "svelte-check": "*",
+    "tailwindcss": "*",
+    "tslib": "*",
+    "typescript": "*",
+    "vite": "*"
+  },
+  "type": "module"
+}
