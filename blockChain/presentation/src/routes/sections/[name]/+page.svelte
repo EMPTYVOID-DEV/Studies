@@ -10,7 +10,12 @@
 
 <div class="w-svw h-svh flex flex-col gap-4">
   <nav class="w-full h-16 flex items-center justify-between px-4">
-    <h3 class="capitalize text-primaryColor justify-self-center">
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+    <h3
+      class="capitalize text-primaryColor justify-self-center"
+      on:click={() => goto("/")}
+    >
       {links[sectionIndex].name}
     </h3>
     <div class="flex gap-2">
