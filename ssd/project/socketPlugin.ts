@@ -4,23 +4,22 @@ import { ViteDevServer } from 'vite';
 type message = {
 	username: string;
 	content: string;
-	attachment: string;
+	room: string;
+};
+
+type newUser = {
+	username: string;
+	room: string;
 };
 
 function ioServer(server) {
 	const io = new Server(server);
 	io.on('connection', (socket) => {
-		socket.on('join', (username: string) => {
-			io.emit('join', username);
-			// @ts-ignore
-			socket.username = username;
+		socket.on('join', (newUser: newUser) => {
+			socket.join(newUser.room);
 		});
 		socket.on('message', (message: message) => {
-			io.emit('message', message);
-		});
-		socket.on('disconnect', () => {
-			//@ts-ignore
-			io.emit('leave', socket.username);
+			io.in(message.room).emit('message', message);
 		});
 	});
 }

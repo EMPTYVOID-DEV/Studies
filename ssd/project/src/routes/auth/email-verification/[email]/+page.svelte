@@ -17,7 +17,7 @@
 	<div class="w-[60%] md:w-5/6 flex flex-col justify-center items-center gap-3">
 		{#if state == 'send'}
 			<span class="text-foregroundColor">
-				'Just one more step: let's verify your email. Click "Send me an email" below to receive the
+				Just one more step: let's verify your email. Click "Send me an email" below to receive the
 				verification email in your inbox.</span
 			>
 			<form action="?/send" method="post" use:enhance={sendEnhance} class="contents">
