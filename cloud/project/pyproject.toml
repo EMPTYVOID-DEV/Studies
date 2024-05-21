@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "cloud"
+version = "0.1.0"
+description = "Handling pdf embedding"
+authors = ["Shinji13 <keskasaymen8@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.111.0"
+uvicorn = "^0.29.0"
+PyPDF2 = "^3.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

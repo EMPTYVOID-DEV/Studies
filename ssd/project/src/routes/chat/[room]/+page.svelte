@@ -38,12 +38,12 @@
 <div class="w-screen h-screen grid px-[1%] py-[1%]">
 	<section class="w-full h-full flex flex-col gap-4 md:px-2 md:pb-2">
 		<div
-			class="w-full h-full flex flex-col gap-2 p-3 overflow-auto bg-foregroundColor/15 rounded-bdr border-2 border-foregroundColor"
+			class="w-full grow flex flex-col gap-2 p-3 overflow-y-auto bg-foregroundColor/15 rounded-bdr border-2 border-foregroundColor"
 		>
 			{#each messages as message}
 				<div class="flex flex-col gap-[2px] {message.username != randUsername ? 'self-end' : ''}">
 					<span class="text-primaryColor">{message.username}</span>
-					<span class="text-foregroundColor bg-primaryColor/25 `rounded-bdr px-2 py-1 w-fit"
+					<span class="text-foregroundColor bg-primaryColor/25 rounded-bdr px-2 py-1 w-fit"
 						>{message.content}</span
 					>
 				</div>
@@ -57,7 +57,7 @@
 				class="w-full outline-none p-3 border-2 bg-primaryColor bg-opacity-30 placeholder-mutedColor text-foregroundColor border-primaryColor rounded-bdr"
 			/>
 			<button
-				class="cursor-pointer p-2 border-4 border-primaryColor rounded-bdr"
+				class="cursor-pointer p-1 mb-1 border-4 border-primaryColor rounded-bdr"
 				on:click={sendMessage}
 			>
 				<SendIcon />
